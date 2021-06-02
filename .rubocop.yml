@@ -1,0 +1,45 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - .pryrc
+    - bin/**/*
+    - tmp/**/*
+  DisplayCopNames: true
+  SuggestExtensions: false
+  NewCops: enable
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/HashAlignment:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Gemfile'
+    - 'spec/**/*.rb'
+
+Style/GlobalVars:
+  Enabled: false

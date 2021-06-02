@@ -1,0 +1,14 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://slack.com/api/bots.info
+    response:
+      status:
+        code: 200
+        message: OK
+      body:
+        encoding: ASCII-8BIT
+        string: '{ "ok": true, "bot": { "id": "B061F7JD2", "deleted": false, "name": "beforebot", "updated": 1449272004, "app_id": "A161CLERW", "user_id": "U012ABCDEF", "icons": { "image_36": "https://...", "image_48": "https://...", "image_72": "https://..." } } }'
+    recorded_at: Sun, 23 May 2021 05:21:32 GMT
+recorded_with: VCR 6.0.0

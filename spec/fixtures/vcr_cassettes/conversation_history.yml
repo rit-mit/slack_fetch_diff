@@ -1,0 +1,14 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://slack.com/api/conversations.history
+    response:
+      status:
+        code: 200
+        message: OK
+      body:
+        encoding: ASCII-8BIT
+        string: '{ "ok": true, "messages": [ { "type": "message", "user": "U012AB3CDE", "text": "I find you punny and would like to smell your nose letter", "ts": "1512085950.000216" }, { "type": "message", "user": "U061F7AUR", "text": "What, you want to smell my shoes better?", "ts": "1512104434.000490" } ], "has_more": true, "pin_count": 0, "response_metadata": { "next_cursor": "bmV4dF90czoxNTEyMDg1ODYxMDAwNTQz" }}'
+    recorded_at: Sun, 23 May 2021 05:21:32 GMT
+recorded_with: VCR 6.0.0
