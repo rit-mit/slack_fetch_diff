@@ -12,6 +12,19 @@ class SlackFetchDiff
       @cache = cache
     end
 
+    def channel_info_by_id(channel_id)
+      response = client.channel_info(channel: channel_id)
+
+      response.fetch('channel', nil)
+    end
+
+    def channel_info_by_name(channel_name)
+      channel_name = "##{channel_name}" unless channel_name[0] == '#'
+      response = client.channel_info(channel: channel_name)
+
+      response.fetch('channel', nil)
+    end
+
     def channel_list
       channel_list = cache.get(cache_key)
 
