@@ -1,10 +1,9 @@
 require 'digest/md5'
+require_relative 'channel/info'
+require_relative 'channel/list'
 
 class SlackFetchDiff
   class Channel
-    KVS_KEY_CHANNEL_LIST = 'CHANNEL_LIST'.freeze
-    KVS_KEY_PREFIX_CHANNEL_NAME = 'CHANNEL_NAME_'.freeze
-
     attr_reader :client, :cache
 
     def initialize(client, cache)
@@ -12,56 +11,14 @@ class SlackFetchDiff
       @cache = cache
     end
 
-    def channel_info_by_id(channel_id)
-      response = client.channel_info(channel: channel_id)
-
-      response.fetch('channel', nil)
+    def info
+      @info ||= Info.new(client, cache)
     end
+    delegate :channel_info_by_id, :channel_info_by_name, to: :info
 
-    def channel_info_by_name(channel_name)
-      channel_name = "##{channel_name}" unless channel_name[0] == '#'
-      response = client.channel_info(channel: channel_name)
-
-      response.fetch('channel', nil)
+    def list
+      @list || List.new(client, cache)
     end
-
-    def channel_list
-      channel_list = cache.get(cache_key)
-
-      if channel_list.nil?
-        channel_list = fetch_from_api
-        cache.set(cache_key, channel_list)
-      end
-      channel_list
-    end
-
-    def reload_channel_list
-      channel_list = fetch_from_api
-      cache.set(cache_key, channel_list)
-
-      channel_list
-    end
-
-    private
-
-    def cache_key
-      "#{KVS_KEY_CHANNEL_LIST}-#{Digest::MD5.hexdigest(client.token)}"
-    end
-
-    def fetch_from_api
-      response = client.conversations_list
-      return [] unless valid_response? response
-
-      response['channels'].each_with_object({}) do |channel, result|
-        result[channel['name']] = channel['id']
-      end
-    end
-
-    def valid_response?(response)
-      return false if response.nil?
-      return false if response['channels']&.count&.zero?
-
-      true
-    end
+    delegate :channel_list, :reload_channel_list, to: :list
   end
 end

@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/conversations.info
+    body:
+      encoding: UTF-8
+      string: channel=C012AB3CD&token=dummy
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Slack Ruby Client/0.17.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Jun 2021 21:10:03 GMT
+      Server:
+      - Apache
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Slack-Backend:
+      - r
+      X-Xss-Protection:
+      - '0'
+      X-Slack-Req-Id:
+      - 1bc722f5ca583c26e5a92e859db74b35
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '4'
+      X-Backend:
+      - main_normal main_canary_with_overflow main_control_with_overflow
+      X-Server:
+      - slack-www-hhvm-main-iad-y159
+      X-Via:
+      - envoy-www-iad-963q, haproxy-edge-nrt-5br9
+      X-Slack-Shared-Secret-Outcome:
+      - shared-secret
+      Via:
+      - envoy-www-iad-963q
+    body:
+      encoding: ASCII-8BIT
+      string: '{ "ok": true, "channel": { "id": "C012AB3CD", "name": "general", "is_channel": true, "is_group": false, "is_im": false, "created": 1449252889, "creator": "W012A3BCD", "is_archived": false, "is_general": true, "unlinked": 0, "name_normalized": "general", "is_read_only": false, "is_shared": false, "parent_conversation": null, "is_ext_shared": false, "is_org_shared": false, "pending_shared": [], "is_pending_ext_shared": false, "is_member": true, "is_private": false, "is_mpim": false, "last_read": "1502126650.228446", "topic": { "value": "For public discussion of generalities", "creator": "W012A3BCD", "last_set": 1449709364 }, "purpose": { "value": "This part of the workspace is for fun. Make fun here.", "creator": "W012A3BCD", "last_set": 1449709364 }, "previous_names": [ "specifics", "abstractions", "etc" ], "locale": "en-US" } }'
+  recorded_at: Wed, 23 Jun 2021 21:10:03 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/conversations.list
+    body:
+      encoding: UTF-8
+      string: cursor&limit=100&token=dummy
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Slack Ruby Client/0.17.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Jun 2021 21:10:30 GMT
+      Server:
+      - Apache
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Slack-Backend:
+      - r
+      X-Xss-Protection:
+      - '0'
+      X-Slack-Req-Id:
+      - 4efbc95a18be34f43b13962e2a37ff9e
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '3'
+      X-Backend:
+      - main_normal main_canary_with_overflow main_control_with_overflow
+      X-Server:
+      - slack-www-hhvm-main-iad-oq6h
+      X-Via:
+      - envoy-www-iad-x6vx, haproxy-edge-nrt-tj3m
+      X-Slack-Shared-Secret-Outcome:
+      - shared-secret
+      Via:
+      - envoy-www-iad-x6vx
+    body:
+      encoding: ASCII-8BIT
+      string: '{ "ok": true, "channels": [ { "id": "C012AB3CD", "name": "general", "is_channel": true, "is_group": false, "is_im": false, "created": 1449252889, "creator": "U012A3CDE", "is_archived": false, "is_general": true, "unlinked": 0, "name_normalized": "general", "is_shared": false, "is_ext_shared": false, "is_org_shared": false, "pending_shared": [], "is_pending_ext_shared": false, "is_member": true, "is_private": false, "is_mpim": false, "topic": { "value": "Company-wide announcements and work-based matters", "creator": "", "last_set": 0 }, "purpose": { "value": "This channel is for team-wide communication and announcements. All team members are in this channel.", "creator": "", "last_set": 0 }, "previous_names": [], "num_members": 4 }, { "id": "C061EG9T2", "name": "random", "is_channel": true, "is_group": false, "is_im": false, "created": 1449252889, "creator": "U061F7AUR", "is_archived": false, "is_general": false, "unlinked": 0, "name_normalized": "random", "is_shared": false, "is_ext_shared": false, "is_org_shared": false, "pending_shared": [], "is_pending_ext_shared": false, "is_member": true, "is_private": false, "is_mpim": false, "topic": { "value": "Non-work banter and water cooler conversation", "creator": "", "last_set": 0 }, "purpose": { "value": "A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber youd prefer to keep out of more focused work-related channels.", "creator": "", "last_set": 0 }, "previous_names": [], "num_members": 4 } ], "response_metadata": { "next_cursor": "dGVhbTpDMDYxRkE1UEI=" }}'
+  recorded_at: Wed, 23 Jun 2021 21:10:31 GMT
+recorded_with: VCR 6.0.0
