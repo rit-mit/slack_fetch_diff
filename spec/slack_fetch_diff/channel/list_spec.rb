@@ -1,6 +1,6 @@
 require './spec/spec_helper'
 
-RSpec.describe SlackFetchDiff::Channel do
+RSpec.describe ::SlackFetchDiff::Channel::List do
   include_context 'client'
   include_context 'cache'
 
