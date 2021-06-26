@@ -34,7 +34,7 @@ class SlackFetchDiff
   private
 
   def cache
-    @cache ||= Cache.new(cache_dir: (ENV['SLACK_FETCH_DIFF_CACHE_DIR'] || '/tmp/slack_fetch_diff_cache/'))
+    @cache ||= Cache.new(cache_dir: (cache_dir || ENV['SLACK_FETCH_DIFF_CACHE_DIR'] || '/tmp/slack_fetch_diff_cache/'))
   end
 
   def client
