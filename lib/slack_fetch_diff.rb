@@ -19,7 +19,7 @@ class SlackFetchDiff
   def channel
     @channel ||= Channel.new(client, cache)
   end
-  delegate :channel_list, :reload_channel_list, to: :channel
+  delegate :channel_list, :reload_channel_list, :channel_info_by_id, :channel_info_by_name, to: :channel
 
   def history
     @history ||= History.new(client, cache)
